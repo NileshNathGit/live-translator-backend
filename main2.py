@@ -15,8 +15,8 @@ BASE_DIR = Path(__file__).resolve().parent
 ENV_PATH = BASE_DIR / ".env"
 load_dotenv(dotenv_path=ENV_PATH)
 
-AOAI_KEY = os.getenv("AOAI_KEY")
-AOAI_ENDPOINT = "https://eastus1ws.openai.azure.com/"
+AZURE_OPENAI_API_KEY = os.getenv("AZURE_OPENAI_API_KEY")
+AZURE_OPENAI_ENDPOINT = "https://eastus1ws.openai.azure.com/"
 AZURE_SPEECH_KEY = os.getenv("AOAI_KEY")
 
 
@@ -28,8 +28,8 @@ AZURE_SPEECH_KEY = os.getenv("AOAI_KEY")
 CHAT_DEPLOYMENT = "gpt-4.1-nano"
 
 aoai_client = AzureOpenAI(
-    api_key=AOAI_KEY,
-    azure_endpoint=AOAI_ENDPOINT,
+    api_key=AZURE_OPENAI_API_KEY,
+    azure_endpoint=AZURE_OPENAI_ENDPOINT,
     api_version="2024-10-01-preview",
 )
 
@@ -38,7 +38,7 @@ aoai_client = AzureOpenAI(
 # -------------------------------------------------------------------
 
 speech_config = speechsdk.SpeechConfig(
-    subscription=AOAI_KEY,
+    subscription=AZURE_OPENAI_API_KEY,
     region="eastus2",
 )
 
