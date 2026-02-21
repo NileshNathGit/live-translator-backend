@@ -17,7 +17,7 @@ load_dotenv(dotenv_path=ENV_PATH)
 
 AZURE_OPENAI_API_KEY = os.getenv("AZURE_OPENAI_API_KEY")
 AZURE_OPENAI_ENDPOINT = "https://eastus1ws.openai.azure.com/"
-AZURE_SPEECH_KEY = os.getenv("AOAI_KEY")
+AZURE_SPEECH_KEY = os.getenv("AZURE_OPENAI_API_KEY")
 
 
 
@@ -38,7 +38,7 @@ aoai_client = AzureOpenAI(
 # -------------------------------------------------------------------
 
 speech_config = speechsdk.SpeechConfig(
-    subscription=AZURE_OPENAI_API_KEY,
+    subscription=AZURE_SPEECH_KEY,
     region="eastus2",
 )
 
