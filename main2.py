@@ -44,7 +44,7 @@ speech_config = speechsdk.SpeechConfig(
 
 # 🔁 CHANGE THESE IF NEEDED
 speech_config.speech_recognition_language = "hi-IN"
-speech_config.speech_synthesis_voice_name = "te-IN-ShrutiNeural"
+speech_config.speech_synthesis_voice_name = "ja-JP-NanamiNeural"
 
 # Browser-playable MP3
 speech_config.set_speech_synthesis_output_format(
@@ -101,7 +101,7 @@ async def websocket_endpoint(ws: WebSocket):
             messages=[
                 {
                     "role": "user",
-                    "content": f"""Translate the following Hindi speech into natural, conversational Telugu.
+                    "content": f"""Translate the following Hindi speech into natural, conversational japanese.
 
 Rules:
 - Preserve intent and tone
